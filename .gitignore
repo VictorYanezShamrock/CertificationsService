@@ -1,0 +1,26 @@
+# Visual Studio
+.vscode/
+.vs/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# Dotnet specific
+bin/
+obj/
+
+# Build folders
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# Application files
+appsettings.Development.json
+
+# Logs
+*.log
+logs/
+
+# Other files and folders
+.DS_Store

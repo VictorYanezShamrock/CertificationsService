@@ -1,0 +1,6 @@
+### HTTP GET Request to Test CertsController Endpoint
+
+# This request sends a GET request to the endpoint `/api/Certs/12345` to fetch certificate data for a given Sales Order (`SO`).
+
+GET http://localhost:5137/api/Certs/278226
+Accept: application/json
