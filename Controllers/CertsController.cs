@@ -129,13 +129,31 @@ public class CertsController : ControllerBase
             if (!string.IsNullOrEmpty(result.IntlII))
             {
                 var filesfound = Certs.GetCerts(result.IntlII);
+                if (filesfound.Any())
+                {
+                    finalResults.AddRange(filesfound.Select(file => new
+                    {
+                        result.PartNo,
+                        result.IntlII,
+                        result.LotNumber,
+                        file
+                    }));
+
+                    // Skip to the next result if files were found for IntlII
+                    continue;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(result.LotNumber))
+            {
+                var filesfound = Certs.GetCerts(result.LotNumber);
                 finalResults.AddRange(filesfound.Select(file => new
                 {
                     result.PartNo,
                     result.IntlII,
                     result.LotNumber,
                     file
-                }));
+                }));   
             }
 
         }
